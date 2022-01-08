@@ -114,6 +114,10 @@
       "metadata": {
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
             "name": "guistate",
             "type": "map"
           },
@@ -217,7 +221,7 @@
   "language_map": {
     "en_us": {
       "block.vmcraft_ii.computer": "Computer",
-      "itemGroup.tabvm_craft": "VM Craft"
+      "itemGroup.tabvm_craft": "VMCraft"
     }
   },
   "foldersRoot": {

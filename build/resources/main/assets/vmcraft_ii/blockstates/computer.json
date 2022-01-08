@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "vmcraft_ii:block/computer"
+    },
+    "facing=east": {
+      "model": "vmcraft_ii:block/computer",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "vmcraft_ii:block/computer",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "vmcraft_ii:block/computer",
+      "y": 270
+    }
+  }
+}

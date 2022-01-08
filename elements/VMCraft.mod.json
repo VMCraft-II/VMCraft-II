@@ -1,0 +1,11 @@
+{
+  "_fv": 24,
+  "_type": "tab",
+  "definition": {
+    "name": "VM Craft",
+    "icon": {
+      "value": "CUSTOM:Computer"
+    },
+    "showSearch": false
+  }
+}

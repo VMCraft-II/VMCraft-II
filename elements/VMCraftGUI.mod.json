@@ -1,0 +1,174 @@
+{
+  "_fv": 24,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 253,
+    "height": 114,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": true,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Connection Information",
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "name": "Connection Information",
+          "x": 156,
+          "y": 67
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "IP Address",
+          "width": 120,
+          "height": 20,
+          "name": "ipAddress",
+          "x": 92,
+          "y": 79
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Port Number",
+          "width": 120,
+          "height": 20,
+          "name": "portNumber",
+          "x": 215,
+          "y": 79
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Username",
+          "width": 120,
+          "height": 20,
+          "name": "username",
+          "x": 92,
+          "y": 103
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Password",
+          "width": 120,
+          "height": 20,
+          "name": "password",
+          "x": 215,
+          "y": 103
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:connectionType>",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "<VAR:connectionType>",
+          "x": 97,
+          "y": 132
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "                   ",
+          "onClick": {
+            "name": "VMCraftGUIConnectionTypeRightClicked"
+          },
+          "width": 120,
+          "height": 20,
+          "name": "                   ",
+          "x": 92,
+          "y": 126
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:backendServer>",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "<VAR:backendServer>",
+          "x": 220,
+          "y": 132
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "                   ",
+          "onClick": {
+            "name": "VMCraftGUIBackendServerRightClicked"
+          },
+          "width": 120,
+          "height": 20,
+          "name": "                   ",
+          "x": 215,
+          "y": 126
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Connect",
+          "onClick": {
+            "name": "VMCraftGUIConnectRightClicked"
+          },
+          "width": 61,
+          "height": 20,
+          "name": "Connect",
+          "x": 92,
+          "y": 150
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:errorMessage>",
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "name": "<VAR:errorMessage>",
+          "x": 159,
+          "y": 156
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Exit",
+          "onClick": {
+            "name": "VMCraftGUIExitRightClicked"
+          },
+          "width": 46,
+          "height": 20,
+          "name": "Exit",
+          "x": 289,
+          "y": 149
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

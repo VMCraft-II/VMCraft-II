@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "vmcraft_ii:blocks/computer_texture",
+    "up": "vmcraft_ii:blocks/computer_texture",
+    "north": "vmcraft_ii:blocks/computer_2",
+    "east": "vmcraft_ii:blocks/computer_texture",
+    "south": "vmcraft_ii:blocks/computer_texture",
+    "west": "vmcraft_ii:blocks/computer_texture",
+    "particle": "vmcraft_ii:blocks/computer_texture"
+  }
+}

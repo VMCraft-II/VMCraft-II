@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "vmcraft_ii:blocks/computer_texture",
-    "up": "vmcraft_ii:blocks/computer_texture",
-    "north": "vmcraft_ii:blocks/computer_2",
-    "east": "vmcraft_ii:blocks/computer_texture",
-    "south": "vmcraft_ii:blocks/computer_texture",
-    "west": "vmcraft_ii:blocks/computer_texture",
-    "particle": "vmcraft_ii:blocks/computer_texture"
+    "down": "vmcraft_ii:blocks/computer_sides",
+    "up": "vmcraft_ii:blocks/computer_sides",
+    "north": "vmcraft_ii:blocks/computer_front",
+    "east": "vmcraft_ii:blocks/computer_sides",
+    "south": "vmcraft_ii:blocks/computer_sides",
+    "west": "vmcraft_ii:blocks/computer_sides",
+    "particle": "vmcraft_ii:blocks/computer_sides"
   }
 }

@@ -1,19 +1,26 @@
 package net.mcreator.vmcraft_ii.procedures;
 
+import net.minecraftforge.fmllegacy.server.ServerLifecycleHooks;
+
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.ChatType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.gui.components.EditBox;
+import net.minecraft.Util;
 
 import net.mcreator.vmcraft_ii.network.VmcraftIiModVariables;
 
 import java.util.HashMap;
 
 public class VMCraftGUIConnectRightClickedProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, HashMap guistate) {
-		if (guistate == null)
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, HashMap guistate) {
+		if (entity == null || guistate == null)
 			return;
 		VmcraftIiModVariables.errorMessage = "";
 		if ((guistate.containsKey("text:ipAddress") ? ((EditBox) guistate.get("text:ipAddress")).getValue() : "").equals("")
@@ -90,7 +97,26 @@ public class VMCraftGUIConnectRightClickedProcedure {
 			}
 		}
 		if ((VmcraftIiModVariables.errorMessage).equals("")) {
-			VmcraftIiModVariables.errorMessage = "Success.";
+			if (!world.isClientSide()) {
+				MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
+				if (mcserv != null)
+					mcserv.getPlayerList()
+							.broadcastMessage(new TextComponent((entity.getDisplayName().getString() + " connected to " + (new Object() {
+								public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+									BlockEntity blockEntity = world.getBlockEntity(pos);
+									if (blockEntity != null)
+										return blockEntity.getTileData().getString(tag);
+									return "";
+								}
+							}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "ipAddress")) + ":" + (new Object() {
+								public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+									BlockEntity blockEntity = world.getBlockEntity(pos);
+									if (blockEntity != null)
+										return blockEntity.getTileData().getString(tag);
+									return "";
+								}
+							}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "portNumber")) + ".")), ChatType.SYSTEM, Util.NIL_UUID);
+			}
 		}
 	}
 }

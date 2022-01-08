@@ -75,7 +75,7 @@ public class VMCraftGUIButtonMessage {
 		}
 		if (buttonID == 2) {
 
-			VMCraftGUIConnectRightClickedProcedure.execute(world, x, y, z, guistate);
+			VMCraftGUIConnectRightClickedProcedure.execute(world, x, y, z, entity, guistate);
 		}
 		if (buttonID == 3) {
 

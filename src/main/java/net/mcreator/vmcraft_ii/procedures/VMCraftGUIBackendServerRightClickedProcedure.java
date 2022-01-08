@@ -17,7 +17,25 @@ public class VMCraftGUIBackendServerRightClickedProcedure {
 					return blockEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "backendServer")).equals("Backend Server")) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "backendServer")).equals("Proxmox")) {
+			if (!world.isClientSide()) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null)
+					_blockEntity.getTileData().putString("backendServer", "Future Options");
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+			}
+			VmcraftIiModVariables.backendServer = new Object() {
+				public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+					BlockEntity blockEntity = world.getBlockEntity(pos);
+					if (blockEntity != null)
+						return blockEntity.getTileData().getString(tag);
+					return "";
+				}
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "backendServer");
+		} else {
 			if (!world.isClientSide()) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				BlockEntity _blockEntity = world.getBlockEntity(_bp);
@@ -35,51 +53,6 @@ public class VMCraftGUIBackendServerRightClickedProcedure {
 					return "";
 				}
 			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "backendServer");
-		} else {
-			if ((new Object() {
-				public String getValue(LevelAccessor world, BlockPos pos, String tag) {
-					BlockEntity blockEntity = world.getBlockEntity(pos);
-					if (blockEntity != null)
-						return blockEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "backendServer")).equals("Proxmox")) {
-				if (!world.isClientSide()) {
-					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					BlockEntity _blockEntity = world.getBlockEntity(_bp);
-					BlockState _bs = world.getBlockState(_bp);
-					if (_blockEntity != null)
-						_blockEntity.getTileData().putString("backendServer", "Future Options");
-					if (world instanceof Level _level)
-						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-				}
-				VmcraftIiModVariables.backendServer = new Object() {
-					public String getValue(LevelAccessor world, BlockPos pos, String tag) {
-						BlockEntity blockEntity = world.getBlockEntity(pos);
-						if (blockEntity != null)
-							return blockEntity.getTileData().getString(tag);
-						return "";
-					}
-				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "backendServer");
-			} else {
-				if (!world.isClientSide()) {
-					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					BlockEntity _blockEntity = world.getBlockEntity(_bp);
-					BlockState _bs = world.getBlockState(_bp);
-					if (_blockEntity != null)
-						_blockEntity.getTileData().putString("backendServer", "Proxmox");
-					if (world instanceof Level _level)
-						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-				}
-				VmcraftIiModVariables.backendServer = new Object() {
-					public String getValue(LevelAccessor world, BlockPos pos, String tag) {
-						BlockEntity blockEntity = world.getBlockEntity(pos);
-						if (blockEntity != null)
-							return blockEntity.getTileData().getString(tag);
-						return "";
-					}
-				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "backendServer");
-			}
 		}
 	}
 }

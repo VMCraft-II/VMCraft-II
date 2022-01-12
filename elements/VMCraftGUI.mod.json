@@ -3,7 +3,7 @@
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 253,
+    "width": 260,
     "height": 114,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
@@ -19,8 +19,8 @@
             "falpha": 0.0
           },
           "name": "Connection Information",
-          "x": 156,
-          "y": 67
+          "x": 158,
+          "y": 68
         }
       },
       {
@@ -30,7 +30,7 @@
           "width": 120,
           "height": 20,
           "name": "ipAddress",
-          "x": 92,
+          "x": 91,
           "y": 79
         }
       },
@@ -41,7 +41,7 @@
           "width": 120,
           "height": 20,
           "name": "portNumber",
-          "x": 215,
+          "x": 216,
           "y": 79
         }
       },
@@ -52,7 +52,7 @@
           "width": 120,
           "height": 20,
           "name": "username",
-          "x": 92,
+          "x": 91,
           "y": 103
         }
       },
@@ -63,7 +63,7 @@
           "width": 120,
           "height": 20,
           "name": "password",
-          "x": 215,
+          "x": 216,
           "y": 103
         }
       },
@@ -76,8 +76,8 @@
             "falpha": 0.0
           },
           "name": "<VAR:connectionType>",
-          "x": 97,
-          "y": 132
+          "x": 98,
+          "y": 133
         }
       },
       {
@@ -90,8 +90,8 @@
           "width": 120,
           "height": 20,
           "name": "                   ",
-          "x": 92,
-          "y": 126
+          "x": 91,
+          "y": 127
         }
       },
       {
@@ -103,8 +103,8 @@
             "falpha": 0.0
           },
           "name": "<VAR:backendServer>",
-          "x": 220,
-          "y": 132
+          "x": 223,
+          "y": 133
         }
       },
       {
@@ -117,8 +117,8 @@
           "width": 120,
           "height": 20,
           "name": "                   ",
-          "x": 215,
-          "y": 126
+          "x": 216,
+          "y": 127
         }
       },
       {
@@ -131,21 +131,21 @@
           "width": 61,
           "height": 20,
           "name": "Connect",
-          "x": 92,
-          "y": 150
+          "x": 91,
+          "y": 151
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "<VAR:errorMessage>",
+          "text": "<VAR:guiMessage>",
           "color": {
             "value": -65536,
             "falpha": 0.0
           },
-          "name": "<VAR:errorMessage>",
-          "x": 159,
-          "y": 156
+          "name": "<VAR:guiMessage>",
+          "x": 156,
+          "y": 157
         }
       },
       {
@@ -158,11 +158,14 @@
           "width": 46,
           "height": 20,
           "name": "Exit",
-          "x": 289,
-          "y": 149
+          "x": 290,
+          "y": 151
         }
       }
     ],
+    "onClosed": {
+      "name": "VMCraftGUIClosed"
+    },
     "gridSettings": {
       "sx": 18,
       "sy": 18,

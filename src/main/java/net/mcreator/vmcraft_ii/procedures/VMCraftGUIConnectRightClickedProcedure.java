@@ -22,7 +22,7 @@ public class VMCraftGUIConnectRightClickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, HashMap guistate) {
 		if (entity == null || guistate == null)
 			return;
-		VmcraftIiModVariables.errorMessage = "";
+		VmcraftIiModVariables.guiMessage = "";
 		if ((guistate.containsKey("text:ipAddress") ? ((EditBox) guistate.get("text:ipAddress")).getValue() : "").equals("")
 				&& (guistate.containsKey("text:portNumber") ? ((EditBox) guistate.get("text:portNumber")).getValue() : "").equals("")) {
 			if ((new Object() {
@@ -40,7 +40,7 @@ public class VMCraftGUIConnectRightClickedProcedure {
 					return "";
 				}
 			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "portNumber")).equals("")) {
-				VmcraftIiModVariables.errorMessage = "Invalid IP address.";
+				VmcraftIiModVariables.guiMessage = "Invalid IP address.";
 			}
 		} else {
 			if ((guistate.containsKey("text:ipAddress") ? ((EditBox) guistate.get("text:ipAddress")).getValue() : "").matches("^([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$")) {
@@ -90,18 +90,18 @@ public class VMCraftGUIConnectRightClickedProcedure {
 						}
 					}
 				} else {
-					VmcraftIiModVariables.errorMessage = "Invalid port number.";
+					VmcraftIiModVariables.guiMessage = "Invalid port number.";
 				}
 			} else {
-				VmcraftIiModVariables.errorMessage = "Invalid IP address.";
+				VmcraftIiModVariables.guiMessage = "Invalid IP address.";
 			}
 		}
-		if ((VmcraftIiModVariables.errorMessage).equals("")) {
+		if ((VmcraftIiModVariables.guiMessage).equals("")) {
 			if (!world.isClientSide()) {
 				MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
 				if (mcserv != null)
 					mcserv.getPlayerList()
-							.broadcastMessage(new TextComponent((entity.getDisplayName().getString() + " connected to " + (new Object() {
+							.broadcastMessage(new TextComponent((entity.getDisplayName().getString() + " attempting to connect to " + (new Object() {
 								public String getValue(LevelAccessor world, BlockPos pos, String tag) {
 									BlockEntity blockEntity = world.getBlockEntity(pos);
 									if (blockEntity != null)
@@ -117,6 +117,21 @@ public class VMCraftGUIConnectRightClickedProcedure {
 								}
 							}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "portNumber")) + ".")), ChatType.SYSTEM, Util.NIL_UUID);
 			}
+			VmcraftIiModVariables.guiMessage = (new Object() {
+				public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+					BlockEntity blockEntity = world.getBlockEntity(pos);
+					if (blockEntity != null)
+						return blockEntity.getTileData().getString(tag);
+					return "";
+				}
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "ipAddress")) + ":" + (new Object() {
+				public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+					BlockEntity blockEntity = world.getBlockEntity(pos);
+					if (blockEntity != null)
+						return blockEntity.getTileData().getString(tag);
+					return "";
+				}
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "portNumber"));
 		}
 	}
 }

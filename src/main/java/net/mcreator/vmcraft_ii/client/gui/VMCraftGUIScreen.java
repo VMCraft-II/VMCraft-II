@@ -36,7 +36,7 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.imageWidth = 253;
+		this.imageWidth = 260;
 		this.imageHeight = 114;
 	}
 
@@ -96,10 +96,10 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Connection Information", 69, 4, -16777216);
-		this.font.draw(poseStack, "" + (VmcraftIiModVariables.connectionType) + "", 10, 69, -1);
-		this.font.draw(poseStack, "" + (VmcraftIiModVariables.backendServer) + "", 133, 69, -1);
-		this.font.draw(poseStack, "" + (VmcraftIiModVariables.errorMessage) + "", 72, 93, -65536);
+		this.font.draw(poseStack, "Connection Information", 74, 5, -16777216);
+		this.font.draw(poseStack, "" + (VmcraftIiModVariables.connectionType) + "", 14, 70, -1);
+		this.font.draw(poseStack, "" + (VmcraftIiModVariables.backendServer) + "", 139, 70, -1);
+		this.font.draw(poseStack, "" + (VmcraftIiModVariables.guiMessage) + "", 72, 94, -65536);
 	}
 
 	@Override
@@ -112,7 +112,7 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		ipAddress = new EditBox(this.font, this.leftPos + 5, this.topPos + 16, 120, 20, new TextComponent("IP Address")) {
+		ipAddress = new EditBox(this.font, this.leftPos + 7, this.topPos + 16, 120, 20, new TextComponent("IP Address")) {
 			{
 				setSuggestion("IP Address");
 			}
@@ -138,7 +138,7 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 		VMCraftGUIMenu.guistate.put("text:ipAddress", ipAddress);
 		ipAddress.setMaxLength(32767);
 		this.addWidget(this.ipAddress);
-		portNumber = new EditBox(this.font, this.leftPos + 128, this.topPos + 16, 120, 20, new TextComponent("Port Number")) {
+		portNumber = new EditBox(this.font, this.leftPos + 132, this.topPos + 16, 120, 20, new TextComponent("Port Number")) {
 			{
 				setSuggestion("Port Number");
 			}
@@ -164,7 +164,7 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 		VMCraftGUIMenu.guistate.put("text:portNumber", portNumber);
 		portNumber.setMaxLength(32767);
 		this.addWidget(this.portNumber);
-		username = new EditBox(this.font, this.leftPos + 5, this.topPos + 40, 120, 20, new TextComponent("Username")) {
+		username = new EditBox(this.font, this.leftPos + 7, this.topPos + 40, 120, 20, new TextComponent("Username")) {
 			{
 				setSuggestion("Username");
 			}
@@ -190,7 +190,7 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 		VMCraftGUIMenu.guistate.put("text:username", username);
 		username.setMaxLength(32767);
 		this.addWidget(this.username);
-		password = new EditBox(this.font, this.leftPos + 128, this.topPos + 40, 120, 20, new TextComponent("Password")) {
+		password = new EditBox(this.font, this.leftPos + 132, this.topPos + 40, 120, 20, new TextComponent("Password")) {
 			{
 				setSuggestion("Password");
 			}
@@ -216,25 +216,25 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 		VMCraftGUIMenu.guistate.put("text:password", password);
 		password.setMaxLength(32767);
 		this.addWidget(this.password);
-		this.addRenderableWidget(new Button(this.leftPos + 5, this.topPos + 63, 120, 20, new TextComponent("                   "), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 7, this.topPos + 64, 120, 20, new TextComponent("                   "), e -> {
 			if (true) {
 				VmcraftIiMod.PACKET_HANDLER.sendToServer(new VMCraftGUIButtonMessage(0, x, y, z));
 				VMCraftGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 128, this.topPos + 63, 120, 20, new TextComponent("                   "), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 132, this.topPos + 64, 120, 20, new TextComponent("                   "), e -> {
 			if (true) {
 				VmcraftIiMod.PACKET_HANDLER.sendToServer(new VMCraftGUIButtonMessage(1, x, y, z));
 				VMCraftGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 5, this.topPos + 87, 61, 20, new TextComponent("Connect"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 7, this.topPos + 88, 61, 20, new TextComponent("Connect"), e -> {
 			if (true) {
 				VmcraftIiMod.PACKET_HANDLER.sendToServer(new VMCraftGUIButtonMessage(2, x, y, z));
 				VMCraftGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 202, this.topPos + 86, 46, 20, new TextComponent("Exit"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 206, this.topPos + 88, 46, 20, new TextComponent("Exit"), e -> {
 			if (true) {
 				VmcraftIiMod.PACKET_HANDLER.sendToServer(new VMCraftGUIButtonMessage(3, x, y, z));
 				VMCraftGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);

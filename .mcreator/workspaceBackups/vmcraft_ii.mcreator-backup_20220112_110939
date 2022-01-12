@@ -114,7 +114,7 @@
       "metadata": {
         "dependencies": [
           {
-            "name": "sourceentity",
+            "name": "entity",
             "type": "entity"
           },
           {
@@ -212,6 +212,12 @@
     },
     {
       "name": "errorMessage",
+      "type": "string",
+      "scope": "global",
+      "value": ""
+    },
+    {
+      "name": "savedInformation",
       "type": "string",
       "scope": "global",
       "value": ""

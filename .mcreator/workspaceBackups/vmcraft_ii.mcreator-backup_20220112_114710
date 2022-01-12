@@ -114,6 +114,10 @@
       "metadata": {
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
             "name": "guistate",
             "type": "map"
           },
@@ -207,17 +211,23 @@
       "value": "Backend Server"
     },
     {
-      "name": "errorMessage",
+      "name": "guiMessage",
       "type": "string",
       "scope": "global",
       "value": ""
+    },
+    {
+      "name": "isError",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
     }
   ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
       "block.vmcraft_ii.computer": "Computer",
-      "itemGroup.tabvm_craft": "VM Craft"
+      "itemGroup.tabvm_craft": "VMCraft"
     }
   },
   "foldersRoot": {

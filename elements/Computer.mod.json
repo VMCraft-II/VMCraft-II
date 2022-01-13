@@ -4,9 +4,9 @@
   "definition": {
     "texture": "computer_sides",
     "textureTop": "computer_sides",
-    "textureLeft": "computer_sides",
+    "textureLeft": "computer_left",
     "textureFront": "computer_front",
-    "textureRight": "computer_sides",
+    "textureRight": "computer_right",
     "textureBack": "computer_sides",
     "renderType": 10,
     "customModelName": "Normal",

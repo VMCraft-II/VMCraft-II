@@ -195,6 +195,14 @@
           }
         ]
       }
+    },
+    {
+      "name": "Laptop",
+      "type": "block",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "laptop"
     }
   ],
   "variable_elements": [
@@ -226,6 +234,7 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "block.vmcraft_ii.laptop": "Computer",
       "block.vmcraft_ii.computer": "Computer",
       "itemGroup.tabvm_craft": "VMCraft"
     }

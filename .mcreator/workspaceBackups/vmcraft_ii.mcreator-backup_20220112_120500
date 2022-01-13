@@ -211,16 +211,16 @@
       "value": "Backend Server"
     },
     {
-      "name": "errorMessage",
+      "name": "guiMessage",
       "type": "string",
       "scope": "global",
       "value": ""
     },
     {
-      "name": "savedInformation",
-      "type": "string",
-      "scope": "global",
-      "value": ""
+      "name": "isError",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
     }
   ],
   "sound_elements": [],

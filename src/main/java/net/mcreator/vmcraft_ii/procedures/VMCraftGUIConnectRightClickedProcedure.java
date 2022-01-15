@@ -45,49 +45,53 @@ public class VMCraftGUIConnectRightClickedProcedure {
 		} else {
 			if ((guistate.containsKey("text:ipAddress") ? ((EditBox) guistate.get("text:ipAddress")).getValue() : "").matches("^([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$")) {
 				if ((guistate.containsKey("text:portNumber") ? ((EditBox) guistate.get("text:portNumber")).getValue() : "").matches("^[0-9]{1,5}$")) {
-					if (!world.isClientSide()) {
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						BlockEntity _blockEntity = world.getBlockEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_blockEntity != null)
-							_blockEntity.getTileData().putString("ipAddress",
-									(guistate.containsKey("text:ipAddress") ? ((EditBox) guistate.get("text:ipAddress")).getValue() : ""));
-						if (world instanceof Level _level)
-							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-					}
-					if (!world.isClientSide()) {
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						BlockEntity _blockEntity = world.getBlockEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_blockEntity != null)
-							_blockEntity.getTileData().putString("portNumber",
-									(guistate.containsKey("text:portNumber") ? ((EditBox) guistate.get("text:portNumber")).getValue() : ""));
-						if (world instanceof Level _level)
-							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-					}
-					if (!(guistate.containsKey("text:username") ? ((EditBox) guistate.get("text:username")).getValue() : "").equals("")) {
-						if (!world.isClientSide()) {
-							BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-							BlockEntity _blockEntity = world.getBlockEntity(_bp);
-							BlockState _bs = world.getBlockState(_bp);
-							if (_blockEntity != null)
-								_blockEntity.getTileData().putString("username",
-										(guistate.containsKey("text:username") ? ((EditBox) guistate.get("text:username")).getValue() : ""));
-							if (world instanceof Level _level)
-								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					if (!(VmcraftIiModVariables.connectionType).equals("Connection Type")) {
+						if (!(VmcraftIiModVariables.backendServer).equals("Backend Server")) {
+							if (!world.isClientSide()) {
+								BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null)
+									_blockEntity.getTileData().putString("ipAddress",
+											(guistate.containsKey("text:ipAddress") ? ((EditBox) guistate.get("text:ipAddress")).getValue() : ""));
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
+							if (!world.isClientSide()) {
+								BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null)
+									_blockEntity.getTileData().putString("portNumber",
+											(guistate.containsKey("text:portNumber") ? ((EditBox) guistate.get("text:portNumber")).getValue() : ""));
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
+							if (!world.isClientSide()) {
+								BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null)
+									_blockEntity.getTileData().putString("username",
+											(guistate.containsKey("text:username") ? ((EditBox) guistate.get("text:username")).getValue() : ""));
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
+							if (!world.isClientSide()) {
+								BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null)
+									_blockEntity.getTileData().putString("password",
+											(guistate.containsKey("text:password") ? ((EditBox) guistate.get("text:password")).getValue() : ""));
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
+						} else {
+							VmcraftIiModVariables.guiMessage = "Invalid backend server.";
 						}
-					}
-					if (!(guistate.containsKey("text:password") ? ((EditBox) guistate.get("text:password")).getValue() : "").equals("")) {
-						if (!world.isClientSide()) {
-							BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-							BlockEntity _blockEntity = world.getBlockEntity(_bp);
-							BlockState _bs = world.getBlockState(_bp);
-							if (_blockEntity != null)
-								_blockEntity.getTileData().putString("password",
-										(guistate.containsKey("text:password") ? ((EditBox) guistate.get("text:password")).getValue() : ""));
-							if (world instanceof Level _level)
-								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-						}
+					} else {
+						VmcraftIiModVariables.guiMessage = "Invalid connection type.";
 					}
 				} else {
 					VmcraftIiModVariables.guiMessage = "Invalid port number.";

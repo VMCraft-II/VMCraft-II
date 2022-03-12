@@ -108,7 +108,7 @@
       "name": "VMCraftGUIConnectRightClicked",
       "type": "procedure",
       "sortid": 10,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "vm_craft_gui_connect_right_clicked",
       "metadata": {
@@ -144,7 +144,7 @@
       "name": "VMCraftGUIConnectionTypeRightClicked",
       "type": "procedure",
       "sortid": 11,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "vm_craft_gui_connection_type_right_clicked",
       "metadata": {
@@ -172,7 +172,7 @@
       "name": "VMCraftGUIBackendServerRightClicked",
       "type": "procedure",
       "sortid": 12,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "vm_craft_gui_backend_server_right_clicked",
       "metadata": {
@@ -198,18 +198,6 @@
     }
   ],
   "variable_elements": [
-    {
-      "name": "connectionType",
-      "type": "string",
-      "scope": "global",
-      "value": "Connection Type"
-    },
-    {
-      "name": "backendServer",
-      "type": "string",
-      "scope": "global",
-      "value": "Backend Server"
-    },
     {
       "name": "guiMessage",
       "type": "string",
@@ -251,5 +239,5 @@
     "modElementsPackage": "net.mcreator.vmcraft_ii",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202100353117
+  "mcreatorVersion": 202100354000
 }

@@ -26,8 +26,9 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 	private final Player entity;
 	EditBox ipAddress;
 	EditBox portNumber;
-	EditBox username;
-	EditBox password;
+	EditBox vmID;
+	EditBox vmName;
+	EditBox nodeName;
 
 	public VMCraftGUIScreen(VMCraftGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -36,7 +37,7 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.imageWidth = 260;
+		this.imageWidth = 261;
 		this.imageHeight = 114;
 	}
 
@@ -54,8 +55,9 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 		this.renderTooltip(ms, mouseX, mouseY);
 		ipAddress.render(ms, mouseX, mouseY, partialTicks);
 		portNumber.render(ms, mouseX, mouseY, partialTicks);
-		username.render(ms, mouseX, mouseY, partialTicks);
-		password.render(ms, mouseX, mouseY, partialTicks);
+		vmID.render(ms, mouseX, mouseY, partialTicks);
+		vmName.render(ms, mouseX, mouseY, partialTicks);
+		nodeName.render(ms, mouseX, mouseY, partialTicks);
 	}
 
 	@Override
@@ -78,10 +80,12 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 			return ipAddress.keyPressed(key, b, c);
 		if (portNumber.isFocused())
 			return portNumber.keyPressed(key, b, c);
-		if (username.isFocused())
-			return username.keyPressed(key, b, c);
-		if (password.isFocused())
-			return password.keyPressed(key, b, c);
+		if (vmID.isFocused())
+			return vmID.keyPressed(key, b, c);
+		if (vmName.isFocused())
+			return vmName.keyPressed(key, b, c);
+		if (nodeName.isFocused())
+			return nodeName.keyPressed(key, b, c);
 		return super.keyPressed(key, b, c);
 	}
 
@@ -90,16 +94,15 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 		super.containerTick();
 		ipAddress.tick();
 		portNumber.tick();
-		username.tick();
-		password.tick();
+		vmID.tick();
+		vmName.tick();
+		nodeName.tick();
 	}
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Connection Information", 74, 5, -16777216);
-		this.font.draw(poseStack, "" + (VmcraftIiModVariables.connectionType) + "", 14, 70, -1);
-		this.font.draw(poseStack, "" + (VmcraftIiModVariables.backendServer) + "", 139, 70, -1);
-		this.font.draw(poseStack, "" + (VmcraftIiModVariables.guiMessage) + "", 72, 94, -65536);
+		this.font.draw(poseStack, "Connection Information", 75, 5, -16777216);
+		this.font.draw(poseStack, "" + (VmcraftIiModVariables.guiMessage) + "", 9, 94, -65536);
 	}
 
 	@Override
@@ -112,7 +115,7 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		ipAddress = new EditBox(this.font, this.leftPos + 7, this.topPos + 16, 120, 20, new TextComponent("IP Address")) {
+		ipAddress = new EditBox(this.font, this.leftPos + 8, this.topPos + 16, 120, 20, new TextComponent("IP Address")) {
 			{
 				setSuggestion("IP Address");
 			}
@@ -138,7 +141,7 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 		VMCraftGUIMenu.guistate.put("text:ipAddress", ipAddress);
 		ipAddress.setMaxLength(32767);
 		this.addWidget(this.ipAddress);
-		portNumber = new EditBox(this.font, this.leftPos + 132, this.topPos + 16, 120, 20, new TextComponent("Port Number")) {
+		portNumber = new EditBox(this.font, this.leftPos + 133, this.topPos + 16, 120, 20, new TextComponent("Port Number")) {
 			{
 				setSuggestion("Port Number");
 			}
@@ -164,16 +167,16 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 		VMCraftGUIMenu.guistate.put("text:portNumber", portNumber);
 		portNumber.setMaxLength(32767);
 		this.addWidget(this.portNumber);
-		username = new EditBox(this.font, this.leftPos + 7, this.topPos + 40, 120, 20, new TextComponent("Username")) {
+		vmID = new EditBox(this.font, this.leftPos + 8, this.topPos + 40, 120, 20, new TextComponent("VM ID")) {
 			{
-				setSuggestion("Username");
+				setSuggestion("VM ID");
 			}
 
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
 				if (getValue().isEmpty())
-					setSuggestion("Username");
+					setSuggestion("VM ID");
 				else
 					setSuggestion(null);
 			}
@@ -182,24 +185,24 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 			public void moveCursorTo(int pos) {
 				super.moveCursorTo(pos);
 				if (getValue().isEmpty())
-					setSuggestion("Username");
+					setSuggestion("VM ID");
 				else
 					setSuggestion(null);
 			}
 		};
-		VMCraftGUIMenu.guistate.put("text:username", username);
-		username.setMaxLength(32767);
-		this.addWidget(this.username);
-		password = new EditBox(this.font, this.leftPos + 132, this.topPos + 40, 120, 20, new TextComponent("Password")) {
+		VMCraftGUIMenu.guistate.put("text:vmID", vmID);
+		vmID.setMaxLength(32767);
+		this.addWidget(this.vmID);
+		vmName = new EditBox(this.font, this.leftPos + 133, this.topPos + 40, 120, 20, new TextComponent("VM Name")) {
 			{
-				setSuggestion("Password");
+				setSuggestion("VM Name");
 			}
 
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
 				if (getValue().isEmpty())
-					setSuggestion("Password");
+					setSuggestion("VM Name");
 				else
 					setSuggestion(null);
 			}
@@ -208,36 +211,50 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 			public void moveCursorTo(int pos) {
 				super.moveCursorTo(pos);
 				if (getValue().isEmpty())
-					setSuggestion("Password");
+					setSuggestion("VM Name");
 				else
 					setSuggestion(null);
 			}
 		};
-		VMCraftGUIMenu.guistate.put("text:password", password);
-		password.setMaxLength(32767);
-		this.addWidget(this.password);
-		this.addRenderableWidget(new Button(this.leftPos + 7, this.topPos + 64, 120, 20, new TextComponent("                   "), e -> {
+		VMCraftGUIMenu.guistate.put("text:vmName", vmName);
+		vmName.setMaxLength(32767);
+		this.addWidget(this.vmName);
+		nodeName = new EditBox(this.font, this.leftPos + 8, this.topPos + 64, 120, 20, new TextComponent("Node Name")) {
+			{
+				setSuggestion("Node Name");
+			}
+
+			@Override
+			public void insertText(String text) {
+				super.insertText(text);
+				if (getValue().isEmpty())
+					setSuggestion("Node Name");
+				else
+					setSuggestion(null);
+			}
+
+			@Override
+			public void moveCursorTo(int pos) {
+				super.moveCursorTo(pos);
+				if (getValue().isEmpty())
+					setSuggestion("Node Name");
+				else
+					setSuggestion(null);
+			}
+		};
+		VMCraftGUIMenu.guistate.put("text:nodeName", nodeName);
+		nodeName.setMaxLength(32767);
+		this.addWidget(this.nodeName);
+		this.addRenderableWidget(new Button(this.leftPos + 135, this.topPos + 64, 61, 20, new TextComponent("Connect"), e -> {
 			if (true) {
 				VmcraftIiMod.PACKET_HANDLER.sendToServer(new VMCraftGUIButtonMessage(0, x, y, z));
 				VMCraftGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 132, this.topPos + 64, 120, 20, new TextComponent("                   "), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 205, this.topPos + 64, 46, 20, new TextComponent("Exit"), e -> {
 			if (true) {
 				VmcraftIiMod.PACKET_HANDLER.sendToServer(new VMCraftGUIButtonMessage(1, x, y, z));
 				VMCraftGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
-			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 7, this.topPos + 88, 61, 20, new TextComponent("Connect"), e -> {
-			if (true) {
-				VmcraftIiMod.PACKET_HANDLER.sendToServer(new VMCraftGUIButtonMessage(2, x, y, z));
-				VMCraftGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
-			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 206, this.topPos + 88, 46, 20, new TextComponent("Exit"), e -> {
-			if (true) {
-				VmcraftIiMod.PACKET_HANDLER.sendToServer(new VMCraftGUIButtonMessage(3, x, y, z));
-				VMCraftGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
 		}));
 	}

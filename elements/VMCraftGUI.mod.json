@@ -3,7 +3,7 @@
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 260,
+    "width": 261,
     "height": 114,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
@@ -48,10 +48,10 @@
       {
         "type": "textfield",
         "data": {
-          "placeholder": "Username",
+          "placeholder": "VM ID",
           "width": 120,
           "height": 20,
-          "name": "username",
+          "name": "vmID",
           "x": 91,
           "y": 103
         }
@@ -59,65 +59,22 @@
       {
         "type": "textfield",
         "data": {
-          "placeholder": "Password",
+          "placeholder": "VM Name",
           "width": 120,
           "height": 20,
-          "name": "password",
+          "name": "vmName",
           "x": 216,
           "y": 103
         }
       },
       {
-        "type": "label",
+        "type": "textfield",
         "data": {
-          "text": "<VAR:connectionType>",
-          "color": {
-            "value": -1,
-            "falpha": 0.0
-          },
-          "name": "<VAR:connectionType>",
-          "x": 98,
-          "y": 133
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "                   ",
-          "onClick": {
-            "name": "VMCraftGUIConnectionTypeRightClicked"
-          },
+          "placeholder": "Node Name",
           "width": 120,
           "height": 20,
-          "name": "                   ",
+          "name": "nodeName",
           "x": 91,
-          "y": 127
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "<VAR:backendServer>",
-          "color": {
-            "value": -1,
-            "falpha": 0.0
-          },
-          "name": "<VAR:backendServer>",
-          "x": 223,
-          "y": 133
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "                   ",
-          "onClick": {
-            "name": "VMCraftGUIBackendServerRightClicked"
-          },
-          "width": 120,
-          "height": 20,
-          "name": "                   ",
-          "x": 216,
           "y": 127
         }
       },
@@ -131,8 +88,8 @@
           "width": 61,
           "height": 20,
           "name": "Connect",
-          "x": 91,
-          "y": 151
+          "x": 218,
+          "y": 127
         }
       },
       {
@@ -144,7 +101,7 @@
             "falpha": 0.0
           },
           "name": "<VAR:guiMessage>",
-          "x": 156,
+          "x": 92,
           "y": 157
         }
       },
@@ -158,14 +115,11 @@
           "width": 46,
           "height": 20,
           "name": "Exit",
-          "x": 290,
-          "y": 151
+          "x": 288,
+          "y": 127
         }
       }
     ],
-    "onClosed": {
-      "name": "VMCraftGUIClosed"
-    },
     "gridSettings": {
       "sx": 18,
       "sy": 18,

@@ -13,9 +13,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.vmcraft_ii.world.inventory.VMCraftGUIMenu;
 import net.mcreator.vmcraft_ii.procedures.VMCraftGUIExitRightClickedProcedure;
-import net.mcreator.vmcraft_ii.procedures.VMCraftGUIConnectionTypeRightClickedProcedure;
 import net.mcreator.vmcraft_ii.procedures.VMCraftGUIConnectRightClickedProcedure;
-import net.mcreator.vmcraft_ii.procedures.VMCraftGUIBackendServerRightClickedProcedure;
 import net.mcreator.vmcraft_ii.VmcraftIiMod;
 
 import java.util.function.Supplier;
@@ -67,17 +65,9 @@ public class VMCraftGUIButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			VMCraftGUIConnectionTypeRightClickedProcedure.execute(world, x, y, z);
-		}
-		if (buttonID == 1) {
-
-			VMCraftGUIBackendServerRightClickedProcedure.execute(world, x, y, z);
-		}
-		if (buttonID == 2) {
-
 			VMCraftGUIConnectRightClickedProcedure.execute(world, x, y, z, entity, guistate);
 		}
-		if (buttonID == 3) {
+		if (buttonID == 1) {
 
 			VMCraftGUIExitRightClickedProcedure.execute(entity);
 		}

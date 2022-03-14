@@ -108,7 +108,7 @@
       "name": "VMCraftGUIConnectRightClicked",
       "type": "procedure",
       "sortid": 10,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "vm_craft_gui_connect_right_clicked",
       "metadata": {
@@ -139,62 +139,6 @@
           }
         ]
       }
-    },
-    {
-      "name": "VMCraftGUIConnectionTypeRightClicked",
-      "type": "procedure",
-      "sortid": 11,
-      "compiles": false,
-      "locked_code": false,
-      "registry_name": "vm_craft_gui_connection_type_right_clicked",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "VMCraftGUIBackendServerRightClicked",
-      "type": "procedure",
-      "sortid": 12,
-      "compiles": false,
-      "locked_code": false,
-      "registry_name": "vm_craft_gui_backend_server_right_clicked",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
     }
   ],
   "variable_elements": [
@@ -203,12 +147,6 @@
       "type": "string",
       "scope": "global",
       "value": ""
-    },
-    {
-      "name": "isError",
-      "type": "logic",
-      "scope": "map",
-      "value": "false"
     }
   ],
   "sound_elements": [],

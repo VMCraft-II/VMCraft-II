@@ -22,8 +22,29 @@ public class VMCraftBlockRightClickedProcedure {
 					return blockEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "portNumber")).equals(""))) {
-			VmcraftIiModVariables.guiMessage = (new Object() {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "portNumber")).equals("") || (new Object() {
+			public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+				BlockEntity blockEntity = world.getBlockEntity(pos);
+				if (blockEntity != null)
+					return blockEntity.getTileData().getString(tag);
+				return "";
+			}
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "vmID")).equals("") || (new Object() {
+			public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+				BlockEntity blockEntity = world.getBlockEntity(pos);
+				if (blockEntity != null)
+					return blockEntity.getTileData().getString(tag);
+				return "";
+			}
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "vmName")).equals("") || (new Object() {
+			public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+				BlockEntity blockEntity = world.getBlockEntity(pos);
+				if (blockEntity != null)
+					return blockEntity.getTileData().getString(tag);
+				return "";
+			}
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "nodeName")).equals(""))) {
+			VmcraftIiModVariables.guiMessage = "https://" + (new Object() {
 				public String getValue(LevelAccessor world, BlockPos pos, String tag) {
 					BlockEntity blockEntity = world.getBlockEntity(pos);
 					if (blockEntity != null)
@@ -37,7 +58,28 @@ public class VMCraftBlockRightClickedProcedure {
 						return blockEntity.getTileData().getString(tag);
 					return "";
 				}
-			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "portNumber"));
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "portNumber")) + "/?console=kvm&novnc=1&vmid=" + (new Object() {
+				public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+					BlockEntity blockEntity = world.getBlockEntity(pos);
+					if (blockEntity != null)
+						return blockEntity.getTileData().getString(tag);
+					return "";
+				}
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "vmID")) + "&vmname=" + (new Object() {
+				public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+					BlockEntity blockEntity = world.getBlockEntity(pos);
+					if (blockEntity != null)
+						return blockEntity.getTileData().getString(tag);
+					return "";
+				}
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "vmName")) + "&node=" + (new Object() {
+				public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+					BlockEntity blockEntity = world.getBlockEntity(pos);
+					if (blockEntity != null)
+						return blockEntity.getTileData().getString(tag);
+					return "";
+				}
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "nodeName")) + "&resize=off&cmd=";
 		} else {
 			VmcraftIiModVariables.guiMessage = "";
 		}

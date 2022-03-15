@@ -19,6 +19,9 @@ import net.mcreator.vmcraft_ii.network.VmcraftIiModVariables;
 import java.util.HashMap;
 
 import java.io.IOException;
+import java.awt.Desktop;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 public class VMCraftGUIConnectRightClickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, HashMap guistate) {
@@ -225,10 +228,194 @@ public class VMCraftGUIConnectRightClickedProcedure {
 				}
 			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "nodeName")) + "&resize=off&cmd=";
 			
-			Runtime rt = Runtime.getRuntime();
+			String myOS = System.getProperty("os.name").toLowerCase();
 			
 			try {
-				rt.exec("rundll32 url.dll,FileProtocolHandler " + VmcraftIiModVariables.guiMessage);
+				Runtime runtime = Runtime.getRuntime();
+				
+				if(myOS.contains("windows")) {
+					runtime.exec("rundll32 url.dll,FileProtocolHandler " + VmcraftIiModVariables.guiMessage);
+					
+					if (!world.isClientSide()) {
+						MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
+						if (mcserv != null)
+							mcserv.getPlayerList().broadcastMessage(
+									new TextComponent((entity.getDisplayName().getString() + " successfully connected to " + "https://" + (new Object() {
+										public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+											BlockEntity blockEntity = world.getBlockEntity(pos);
+											if (blockEntity != null)
+												return blockEntity.getTileData().getString(tag);
+											return "";
+										}
+									}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "ipAddress")) + ":" + (new Object() {
+										public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+											BlockEntity blockEntity = world.getBlockEntity(pos);
+											if (blockEntity != null)
+												return blockEntity.getTileData().getString(tag);
+											return "";
+										}
+									}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "portNumber")) + "/?console=kvm&novnc=1&vmid="
+											+ (new Object() {
+												public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+													BlockEntity blockEntity = world.getBlockEntity(pos);
+													if (blockEntity != null)
+														return blockEntity.getTileData().getString(tag);
+													return "";
+												}
+											}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "vmID")) + "&vmname=" + (new Object() {
+												public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+													BlockEntity blockEntity = world.getBlockEntity(pos);
+													if (blockEntity != null)
+														return blockEntity.getTileData().getString(tag);
+													return "";
+												}
+											}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "vmName")) + "&node=" + (new Object() {
+												public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+													BlockEntity blockEntity = world.getBlockEntity(pos);
+													if (blockEntity != null)
+														return blockEntity.getTileData().getString(tag);
+													return "";
+												}
+											}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "nodeName")) + "&resize=off&cmd=")),
+									ChatType.SYSTEM, Util.NIL_UUID);
+					}
+				} else if(myOS.contains("mac")) {
+					runtime.exec("open " + VmcraftIiModVariables.guiMessage);
+					
+					if (!world.isClientSide()) {
+						MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
+						if (mcserv != null)
+							mcserv.getPlayerList().broadcastMessage(
+									new TextComponent((entity.getDisplayName().getString() + " successfully connected to " + "https://" + (new Object() {
+										public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+											BlockEntity blockEntity = world.getBlockEntity(pos);
+											if (blockEntity != null)
+												return blockEntity.getTileData().getString(tag);
+											return "";
+										}
+									}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "ipAddress")) + ":" + (new Object() {
+										public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+											BlockEntity blockEntity = world.getBlockEntity(pos);
+											if (blockEntity != null)
+												return blockEntity.getTileData().getString(tag);
+											return "";
+										}
+									}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "portNumber")) + "/?console=kvm&novnc=1&vmid="
+											+ (new Object() {
+												public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+													BlockEntity blockEntity = world.getBlockEntity(pos);
+													if (blockEntity != null)
+														return blockEntity.getTileData().getString(tag);
+													return "";
+												}
+											}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "vmID")) + "&vmname=" + (new Object() {
+												public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+													BlockEntity blockEntity = world.getBlockEntity(pos);
+													if (blockEntity != null)
+														return blockEntity.getTileData().getString(tag);
+													return "";
+												}
+											}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "vmName")) + "&node=" + (new Object() {
+												public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+													BlockEntity blockEntity = world.getBlockEntity(pos);
+													if (blockEntity != null)
+														return blockEntity.getTileData().getString(tag);
+													return "";
+												}
+											}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "nodeName")) + "&resize=off&cmd=")),
+									ChatType.SYSTEM, Util.NIL_UUID);
+					}
+				} else if(myOS.contains("nix") || myOS.contains("nux")) {
+					runtime.exec("xdg-open " + VmcraftIiModVariables.guiMessage);
+					
+					if (!world.isClientSide()) {
+						MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
+						if (mcserv != null)
+							mcserv.getPlayerList().broadcastMessage(
+									new TextComponent((entity.getDisplayName().getString() + " successfully connected to " + "https://" + (new Object() {
+										public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+											BlockEntity blockEntity = world.getBlockEntity(pos);
+											if (blockEntity != null)
+												return blockEntity.getTileData().getString(tag);
+											return "";
+										}
+									}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "ipAddress")) + ":" + (new Object() {
+										public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+											BlockEntity blockEntity = world.getBlockEntity(pos);
+											if (blockEntity != null)
+												return blockEntity.getTileData().getString(tag);
+											return "";
+										}
+									}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "portNumber")) + "/?console=kvm&novnc=1&vmid="
+											+ (new Object() {
+												public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+													BlockEntity blockEntity = world.getBlockEntity(pos);
+													if (blockEntity != null)
+														return blockEntity.getTileData().getString(tag);
+													return "";
+												}
+											}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "vmID")) + "&vmname=" + (new Object() {
+												public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+													BlockEntity blockEntity = world.getBlockEntity(pos);
+													if (blockEntity != null)
+														return blockEntity.getTileData().getString(tag);
+													return "";
+												}
+											}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "vmName")) + "&node=" + (new Object() {
+												public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+													BlockEntity blockEntity = world.getBlockEntity(pos);
+													if (blockEntity != null)
+														return blockEntity.getTileData().getString(tag);
+													return "";
+												}
+											}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "nodeName")) + "&resize=off&cmd=")),
+									ChatType.SYSTEM, Util.NIL_UUID);
+					}
+				} else {
+					if (!world.isClientSide()) {
+						MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
+						if (mcserv != null)
+							mcserv.getPlayerList().broadcastMessage(
+									new TextComponent((entity.getDisplayName().getString() + " failed to connect to " + "https://" + (new Object() {
+										public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+											BlockEntity blockEntity = world.getBlockEntity(pos);
+											if (blockEntity != null)
+												return blockEntity.getTileData().getString(tag);
+											return "";
+										}
+									}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "ipAddress")) + ":" + (new Object() {
+										public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+											BlockEntity blockEntity = world.getBlockEntity(pos);
+											if (blockEntity != null)
+												return blockEntity.getTileData().getString(tag);
+											return "";
+										}
+									}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "portNumber")) + "/?console=kvm&novnc=1&vmid="
+											+ (new Object() {
+												public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+													BlockEntity blockEntity = world.getBlockEntity(pos);
+													if (blockEntity != null)
+														return blockEntity.getTileData().getString(tag);
+													return "";
+												}
+											}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "vmID")) + "&vmname=" + (new Object() {
+												public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+													BlockEntity blockEntity = world.getBlockEntity(pos);
+													if (blockEntity != null)
+														return blockEntity.getTileData().getString(tag);
+													return "";
+												}
+											}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "vmName")) + "&node=" + (new Object() {
+												public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+													BlockEntity blockEntity = world.getBlockEntity(pos);
+													if (blockEntity != null)
+														return blockEntity.getTileData().getString(tag);
+													return "";
+												}
+											}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "nodeName")) + "&resize=off&cmd=")),
+									ChatType.SYSTEM, Util.NIL_UUID);
+					}
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

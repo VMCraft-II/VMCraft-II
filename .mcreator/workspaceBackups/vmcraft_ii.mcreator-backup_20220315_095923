@@ -108,7 +108,7 @@
       "name": "VMCraftGUIConnectRightClicked",
       "type": "procedure",
       "sortid": 10,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "vm_craft_gui_connect_right_clicked",
       "metadata": {

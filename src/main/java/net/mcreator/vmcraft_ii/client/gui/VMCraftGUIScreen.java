@@ -102,7 +102,8 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
 		this.font.draw(poseStack, "Connection Information", 75, 5, -16777216);
-		this.font.draw(poseStack, "" + (VmcraftIiModVariables.guiMessage) + "", 9, 94, -65536);
+		this.font.draw(poseStack, "" + ((entity.getCapability(VmcraftIiModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new VmcraftIiModVariables.PlayerVariables())).guiMessage) + "", 9, 94, -65536);
 	}
 
 	@Override
@@ -245,13 +246,13 @@ public class VMCraftGUIScreen extends AbstractContainerScreen<VMCraftGUIMenu> {
 		VMCraftGUIMenu.guistate.put("text:nodeName", nodeName);
 		nodeName.setMaxLength(32767);
 		this.addWidget(this.nodeName);
-		this.addRenderableWidget(new Button(this.leftPos + 135, this.topPos + 64, 61, 20, new TextComponent("Connect"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 135, this.topPos + 64, 56, 20, new TextComponent(" Save "), e -> {
 			if (true) {
 				VmcraftIiMod.PACKET_HANDLER.sendToServer(new VMCraftGUIButtonMessage(0, x, y, z));
 				VMCraftGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 205, this.topPos + 64, 46, 20, new TextComponent("Exit"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 195, this.topPos + 64, 56, 20, new TextComponent(" Exit "), e -> {
 			if (true) {
 				VmcraftIiMod.PACKET_HANDLER.sendToServer(new VMCraftGUIButtonMessage(1, x, y, z));
 				VMCraftGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);

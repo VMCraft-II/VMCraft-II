@@ -81,14 +81,28 @@
       {
         "type": "button",
         "data": {
-          "text": "Connect",
+          "text": " Save ",
           "onClick": {
-            "name": "VMCraftGUIConnectRightClicked"
+            "name": "VMCraftGUISaveRightClicked"
           },
-          "width": 61,
+          "width": 56,
           "height": 20,
-          "name": "Connect",
+          "name": " Save ",
           "x": 218,
+          "y": 127
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": " Exit ",
+          "onClick": {
+            "name": "VMCraftGUIExitRightClicked"
+          },
+          "width": 56,
+          "height": 20,
+          "name": " Exit ",
+          "x": 278,
           "y": 127
         }
       },
@@ -103,20 +117,6 @@
           "name": "<VAR:guiMessage>",
           "x": 92,
           "y": 157
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Exit",
-          "onClick": {
-            "name": "VMCraftGUIExitRightClicked"
-          },
-          "width": 46,
-          "height": 20,
-          "name": "Exit",
-          "x": 288,
-          "y": 127
         }
       }
     ],

@@ -1,8 +1,6 @@
 
 package net.mcreator.vmcraft_ii.block;
 
-import net.minecraftforge.fmllegacy.network.NetworkHooks;
-
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
@@ -22,28 +20,18 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.vmcraft_ii.world.inventory.VMCraftGUIMenu;
 import net.mcreator.vmcraft_ii.procedures.VMCraftBlockRightClickedProcedure;
-import net.mcreator.vmcraft_ii.procedures.VMCraftBlockAddedProcedure;
 import net.mcreator.vmcraft_ii.block.entity.ComputerBlockEntity;
 
 import java.util.List;
 import java.util.Collections;
-
-import io.netty.buffer.Unpooled;
 
 public class ComputerBlock extends FallingBlock
 		implements
@@ -95,27 +83,8 @@ public class ComputerBlock extends FallingBlock
 	}
 
 	@Override
-	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
-		super.onPlace(blockstate, world, pos, oldState, moving);
-		VMCraftBlockAddedProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
-	}
-
-	@Override
 	public InteractionResult use(BlockState blockstate, Level world, BlockPos pos, Player entity, InteractionHand hand, BlockHitResult hit) {
 		super.use(blockstate, world, pos, entity, hand, hit);
-		if (entity instanceof ServerPlayer player) {
-			NetworkHooks.openGui(player, new MenuProvider() {
-				@Override
-				public Component getDisplayName() {
-					return new TextComponent("Computer");
-				}
-
-				@Override
-				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-					return new VMCraftGUIMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(pos));
-				}
-			}, pos);
-		}
 		int x = pos.getX();
 		int y = pos.getY();
 		int z = pos.getZ();
@@ -124,7 +93,7 @@ public class ComputerBlock extends FallingBlock
 		double hitZ = hit.getLocation().z;
 		Direction direction = hit.getDirection();
 
-		VMCraftBlockRightClickedProcedure.execute(world, x, y, z);
+		VMCraftBlockRightClickedProcedure.execute(world, x, y, z, entity);
 		return InteractionResult.SUCCESS;
 	}
 

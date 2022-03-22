@@ -12,8 +12,8 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.vmcraft_ii.world.inventory.VMCraftGUIMenu;
+import net.mcreator.vmcraft_ii.procedures.VMCraftGUISaveRightClickedProcedure;
 import net.mcreator.vmcraft_ii.procedures.VMCraftGUIExitRightClickedProcedure;
-import net.mcreator.vmcraft_ii.procedures.VMCraftGUIConnectRightClickedProcedure;
 import net.mcreator.vmcraft_ii.VmcraftIiMod;
 
 import java.util.function.Supplier;
@@ -65,7 +65,7 @@ public class VMCraftGUIButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			VMCraftGUIConnectRightClickedProcedure.execute(world, x, y, z, entity, guistate);
+			VMCraftGUISaveRightClickedProcedure.execute(world, x, y, z, entity, guistate);
 		}
 		if (buttonID == 1) {
 

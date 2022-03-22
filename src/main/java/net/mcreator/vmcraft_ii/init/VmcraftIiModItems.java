@@ -13,6 +13,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.BlockItem;
 
+import net.mcreator.vmcraft_ii.item.ConfigurationKeyItem;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -20,6 +22,7 @@ import java.util.ArrayList;
 public class VmcraftIiModItems {
 	private static final List<Item> REGISTRY = new ArrayList<>();
 	public static final Item COMPUTER = register(VmcraftIiModBlocks.COMPUTER, VmcraftIiModTabs.TAB_VM_CRAFT);
+	public static final Item CONFIGURATION_KEY = register(new ConfigurationKeyItem());
 
 	private static Item register(Item item) {
 		REGISTRY.add(item);

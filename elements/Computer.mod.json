@@ -106,7 +106,7 @@
     "particleAmount": 4,
     "hasInventory": true,
     "guiBoundTo": "VMCraftGUI",
-    "openGUIOnRightClick": true,
+    "openGUIOnRightClick": false,
     "inventorySize": 0,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": false,
@@ -123,9 +123,6 @@
     "fluidRestrictions": [],
     "onRightClicked": {
       "name": "VMCraftBlockRightClicked"
-    },
-    "onBlockAdded": {
-      "name": "VMCraftBlockAdded"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

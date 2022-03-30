@@ -11,5 +11,5 @@ After having improved upon our predecessors who created VMCraft (1), we have cre
 
 ## Developer Installation
 1. Install MCreator
-2. Set-up testing server (personal choice) (We used [Proxmox](https://proxmox.com/en/)
-3. 
+2. Set-up testing server (personal choice) (We used [Proxmox](https://proxmox.com/en/))
+3. More instructions later

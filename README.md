@@ -9,11 +9,13 @@ After having improved upon our predecessors who created VMCraft (1), we have cre
 1. Download a jar file somewhere (Not there yet)
 2. Place jar file in a specific location (somewhere we'll help)
 3. Play Minecraft
-4. Build key and laptop/computer (pics below)
+4. Build/create laptop or computer. Find config key (in creative mode block menu).
 <br /> pics here later...
 5. Place block, use key on block to configure
 6. Enter connection info of server
-<br /> pic here later...
+<img src="screenshots/Capture.png" width="45%"><img/>
+<img src="screenshots/Capture2.png" width="45%"><img/>
+<img src="screenshots/Capture3.png" width="45%"><img/>
 7. Right click on Block (no key in hand)
 
 Should see designated virtual machine remote desktop at this point in browser

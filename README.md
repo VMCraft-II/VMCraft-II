@@ -12,10 +12,10 @@ After having improved upon our predecessors who created VMCraft (1), we have cre
 4. Build/create laptop or computer. Find config key (in creative mode block menu).
 <br /> pics here later...
 5. Place block, use key on block to configure
-6. Enter connection info of server <br \>
-<img src="screenshots/Capture.PNG" width="45%"><img/>
-<img src="screenshots/Capture2.PNG" width="45%"><img/>
-<img src="screenshots/Capture3.PNG" width="45%"><img/> <br \>
+6. Enter connection info of server
+<br \> <img src="screenshots/Capture.PNG" width="45%"><img/> 
+<img src="screenshots/Capture2.PNG" width="45%"><img/> <br \>
+<img src="screenshots/Capture3.PNG" width="45%"><img/>
 7. Right click on Block (no key in hand)
 
 Should see designated virtual machine remote desktop at this point in browser

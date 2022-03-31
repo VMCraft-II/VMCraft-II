@@ -13,9 +13,9 @@ After having improved upon our predecessors who created VMCraft (1), we have cre
 <br /> pics here later...
 5. Place block, use key on block to configure
 6. Enter connection info of server
-<img src="screenshots/Capture.png" width="45%"><img/>
-<img src="screenshots/Capture2.png" width="45%"><img/>
-<img src="screenshots/Capture3.png" width="45%"><img/>
+<img src="screenshots/Capture.PNG" width="45%"><img/>
+<img src="screenshots/Capture2.PNG" width="45%"><img/>
+<img src="screenshots/Capture3.PNG" width="45%"><img/>
 7. Right click on Block (no key in hand)
 
 Should see designated virtual machine remote desktop at this point in browser

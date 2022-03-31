@@ -16,6 +16,8 @@ After having improved upon our predecessors who created VMCraft (1), we have cre
 <br /> <img src="screenshots/Capture.PNG" width="45%"><img/> 
 <img src="screenshots/Capture2.PNG" width="45%"><img/> <br />
 <img src="screenshots/Capture3.PNG" width="45%"><img/>
+<img src="screenshots/Capture4.PNG" width="45%"><img/> <br />
+
 7. Right click on Block (no key in hand)
 
 Should see designated virtual machine remote desktop at this point in browser

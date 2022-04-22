@@ -38,6 +38,7 @@ public class VmcraftIiModBlocks {
 	public static class ClientSideHandler {
 		@SubscribeEvent
 		public static void clientSetup(FMLClientSetupEvent event) {
+			ComputerBlock.registerRenderLayer();
 			LaptopBlock.registerRenderLayer();
 		}
 	}

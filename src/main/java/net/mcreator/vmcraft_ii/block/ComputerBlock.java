@@ -1,6 +1,9 @@
 
 package net.mcreator.vmcraft_ii.block;
 
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.api.distmarker.Dist;
+
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
@@ -26,8 +29,11 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
 import net.mcreator.vmcraft_ii.procedures.VMCraftBlockRightClickedProcedure;
+import net.mcreator.vmcraft_ii.init.VmcraftIiModBlocks;
 import net.mcreator.vmcraft_ii.block.entity.ComputerBlockEntity;
 
 import java.util.List;
@@ -40,7 +46,8 @@ public class ComputerBlock extends FallingBlock
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
 	public ComputerBlock() {
-		super(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(0f, 10f));
+		super(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(0f, 10f).noOcclusion()
+				.isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 		setRegistryName("computer");
 	}
@@ -113,5 +120,10 @@ public class ComputerBlock extends FallingBlock
 		super.triggerEvent(state, world, pos, eventID, eventParam);
 		BlockEntity blockEntity = world.getBlockEntity(pos);
 		return blockEntity == null ? false : blockEntity.triggerEvent(eventID, eventParam);
+	}
+
+	@OnlyIn(Dist.CLIENT)
+	public static void registerRenderLayer() {
+		ItemBlockRenderTypes.setRenderLayer(VmcraftIiModBlocks.COMPUTER, renderType -> renderType == RenderType.cutout());
 	}
 }

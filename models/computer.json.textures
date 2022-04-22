@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "off-white",
+        "1": "screen",
+        "missing": ""
+      },
+      "name": "default"
+    }
+  }
+}

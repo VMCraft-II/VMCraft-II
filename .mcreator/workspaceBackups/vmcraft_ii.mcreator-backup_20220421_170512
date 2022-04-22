@@ -33,17 +33,6 @@
       "registry_name": "computer_recipe"
     },
     {
-      "name": "VMCraftBlockAdded",
-      "type": "procedure",
-      "sortid": 7,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "vm_craft_block_added",
-      "metadata": {
-        "dependencies": []
-      }
-    },
-    {
       "name": "VMCraftBlockRightClicked",
       "type": "procedure",
       "sortid": 8,
@@ -134,6 +123,22 @@
           }
         ]
       }
+    },
+    {
+      "name": "Laptop",
+      "type": "block",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "laptop"
+    },
+    {
+      "name": "LaptopRecipe",
+      "type": "recipe",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "laptop_recipe"
     }
   ],
   "variable_elements": [
@@ -148,6 +153,7 @@
   "language_map": {
     "en_us": {
       "item.vmcraft_ii.configuration_key": "Configuration Key",
+      "block.vmcraft_ii.laptop": "Laptop",
       "block.vmcraft_ii.computer": "Computer",
       "itemGroup.tabvm_craft": "VMCraft"
     }

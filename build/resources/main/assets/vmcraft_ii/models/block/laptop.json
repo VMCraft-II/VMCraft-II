@@ -1,12 +1,11 @@
 {
-  "parent": "block/cube",
+  "parent": "vmcraft_ii:custom/laptop",
   "textures": {
-    "down": "vmcraft_ii:blocks/computer_sides",
-    "up": "vmcraft_ii:blocks/computer_sides",
-    "north": "vmcraft_ii:blocks/computer_sides",
-    "east": "vmcraft_ii:blocks/computer_left",
-    "south": "vmcraft_ii:blocks/computer_sides",
-    "west": "vmcraft_ii:blocks/computer_right",
-    "particle": "vmcraft_ii:blocks/computer_sides"
+    "all": "vmcraft_ii:blocks/computer_sides",
+    "particle": "vmcraft_ii:blocks/computer_sides",
+    "0": "vmcraft_ii:blocks/silver",
+    "1": "vmcraft_ii:blocks/keyboard",
+    "2": "vmcraft_ii:blocks/screen",
+    "missing": "vmcraft_ii:blocks/"
   }
 }

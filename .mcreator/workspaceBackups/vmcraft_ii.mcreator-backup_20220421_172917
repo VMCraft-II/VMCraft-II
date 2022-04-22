@@ -153,7 +153,7 @@
   "language_map": {
     "en_us": {
       "item.vmcraft_ii.configuration_key": "Configuration Key",
-      "block.vmcraft_ii.laptop": "Computer",
+      "block.vmcraft_ii.laptop": "Laptop",
       "block.vmcraft_ii.computer": "Computer",
       "itemGroup.tabvm_craft": "VMCraft"
     }

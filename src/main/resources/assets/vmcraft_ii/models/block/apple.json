@@ -1,0 +1,11 @@
+{
+  "parent": "vmcraft_ii:custom/apple",
+  "textures": {
+    "all": "vmcraft_ii:blocks/computer_sides",
+    "particle": "vmcraft_ii:blocks/computer_sides",
+    "0": "vmcraft_ii:blocks/silver",
+    "1": "vmcraft_ii:blocks/apple_keboard",
+    "2": "vmcraft_ii:blocks/apple_screen",
+    "missing": "vmcraft_ii:blocks/"
+  }
+}

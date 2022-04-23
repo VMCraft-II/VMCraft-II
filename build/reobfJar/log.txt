@@ -92,11 +92,11 @@ Remapping final jar
 Remapping jar...  1%
 Remapping jar... 10%
 Remapping jar... 20%
-Remapping jar... 30%
+Remapping jar... 31%
 Remapping jar... 40%
 Remapping jar... 50%
 Remapping jar... 60%
 Remapping jar... 70%
-Remapping jar... 80%
+Remapping jar... 81%
 Remapping jar... 90%
 Remapping jar... 100%

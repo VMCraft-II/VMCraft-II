@@ -24,6 +24,7 @@ public class VmcraftIiModItems {
 	public static final Item COMPUTER = register(VmcraftIiModBlocks.COMPUTER, VmcraftIiModTabs.TAB_VM_CRAFT);
 	public static final Item CONFIGURATION_KEY = register(new ConfigurationKeyItem());
 	public static final Item LAPTOP = register(VmcraftIiModBlocks.LAPTOP, VmcraftIiModTabs.TAB_VM_CRAFT);
+	public static final Item APPLE = register(VmcraftIiModBlocks.APPLE, VmcraftIiModTabs.TAB_VM_CRAFT);
 
 	private static Item register(Item item) {
 		REGISTRY.add(item);

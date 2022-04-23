@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.Block;
 
 import net.mcreator.vmcraft_ii.block.entity.LaptopBlockEntity;
 import net.mcreator.vmcraft_ii.block.entity.ComputerBlockEntity;
+import net.mcreator.vmcraft_ii.block.entity.AppleBlockEntity;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class VmcraftIiModBlockEntities {
 	private static final List<BlockEntityType<?>> REGISTRY = new ArrayList<>();
 	public static final BlockEntityType<?> COMPUTER = register("vmcraft_ii:computer", VmcraftIiModBlocks.COMPUTER, ComputerBlockEntity::new);
 	public static final BlockEntityType<?> LAPTOP = register("vmcraft_ii:laptop", VmcraftIiModBlocks.LAPTOP, LaptopBlockEntity::new);
+	public static final BlockEntityType<?> APPLE = register("vmcraft_ii:apple", VmcraftIiModBlocks.APPLE, AppleBlockEntity::new);
 
 	private static BlockEntityType<?> register(String registryname, Block block, BlockEntityType.BlockEntitySupplier<?> supplier) {
 		BlockEntityType<?> blockEntityType = BlockEntityType.Builder.of(supplier, block).build(null).setRegistryName(registryname);

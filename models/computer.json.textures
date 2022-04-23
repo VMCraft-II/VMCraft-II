@@ -3,7 +3,9 @@
     "default": {
       "map": {
         "0": "off-white",
-        "1": "screen",
+        "1": "silver",
+        "2": "keyboard",
+        "3": "screen",
         "missing": ""
       },
       "name": "default"

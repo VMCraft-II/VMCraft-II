@@ -4,7 +4,9 @@
     "all": "vmcraft_ii:blocks/computer_sides",
     "particle": "vmcraft_ii:blocks/computer_sides",
     "0": "vmcraft_ii:blocks/off-white",
-    "1": "vmcraft_ii:blocks/screen",
+    "1": "vmcraft_ii:blocks/silver",
+    "2": "vmcraft_ii:blocks/keyboard",
+    "3": "vmcraft_ii:blocks/screen",
     "missing": "vmcraft_ii:blocks/"
   }
 }

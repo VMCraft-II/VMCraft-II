@@ -102,7 +102,7 @@ public class AppleBlockEntity extends RandomizableContainerBlockEntity implement
 
 	@Override
 	public Component getDisplayName() {
-		return new TextComponent("Computer");
+		return new TextComponent("Apple");
 	}
 
 	@Override

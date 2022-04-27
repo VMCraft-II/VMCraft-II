@@ -10,7 +10,8 @@ After having improved upon our predecessors who created VMCraft (1), we have cre
 2. Place jar file in a specific location (somewhere we'll help)
 3. Play Minecraft
 4. Build/create laptop or computer. Find config key (in creative mode block menu).
-<br /> pics here later...
+<br /> <img src="screenshots/Computers.PNG" width="45%"><img/>
+<br /> <img src="screenshots/Recipe.PNG" width="45%"><img/>
 5. Place block, use key on block to configure
 6. Enter connection info of server (Example Below)
 <br /> <img src="screenshots/Capture.PNG" width="45%"><img/> 

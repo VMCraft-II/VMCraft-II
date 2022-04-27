@@ -11,7 +11,7 @@ After having improved upon our predecessors who created VMCraft (1), we have cre
 3. Play Minecraft
 4. Build/create laptop or computer. Find config key (in creative mode block menu).
 <br /> <img src="screenshots/Recipe.png" width="30%"><img/>
-<br /> <img src="screenshots/key.PNG" width="25%"><img/>
+<img src="screenshots/key.PNG" width="30%"><img/>
 5. Place block, use key on block to configure
 <br /> <img src="screenshots/Computers.png" width="45%"><img/>
 7. Enter connection info of server (Example Below)

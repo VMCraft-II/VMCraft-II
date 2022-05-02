@@ -4,11 +4,15 @@ license="Academic Free License v3.0"
 
 [[mods]]
 modId="vmcraft_ii"
-version="1.0.0"
+version="2.0.0"
 displayName="VMCraft-II"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
-authors="Hunter, MCreator"
+logoFile="logo.png"
+authors="Hunter Casteel, Cade Disselkoan, Heba Aljabrine"
+description='''
+Connect to virtual machines hosted on a Proxmox server from within Minecraft!
+'''
 
 [[dependencies.vmcraft_ii]]
     modId="minecraft"

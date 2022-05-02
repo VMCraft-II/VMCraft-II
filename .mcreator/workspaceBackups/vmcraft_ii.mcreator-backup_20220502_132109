@@ -139,6 +139,22 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "laptop_recipe"
+    },
+    {
+      "name": "Apple",
+      "type": "block",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "apple"
+    },
+    {
+      "name": "AppleRecipe",
+      "type": "recipe",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "apple_recipe"
     }
   ],
   "variable_elements": [
@@ -154,6 +170,7 @@
     "en_us": {
       "item.vmcraft_ii.configuration_key": "Configuration Key",
       "block.vmcraft_ii.laptop": "Laptop",
+      "block.vmcraft_ii.apple": "Apple",
       "block.vmcraft_ii.computer": "Computer",
       "itemGroup.tabvm_craft": "VMCraft"
     }
@@ -165,17 +182,20 @@
   "workspaceSettings": {
     "modid": "vmcraft_ii",
     "modName": "VMCraft-II",
-    "version": "1.0.0",
-    "author": "Hunter, MCreator",
-    "websiteURL": "https://mcreator.net",
+    "version": "2.0.0",
+    "description": "Connect to virtual machines hosted on a Proxmox server from within Minecraft!",
+    "author": "Hunter Casteel, Cade Disselkoan, Heba Aljabrine",
+    "websiteURL": "www.github.com/VMCraft-II/VMCraft-II",
     "license": "Academic Free License v3.0",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
+    "modPicture": "vm_craft_gui",
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.17.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.vmcraft_ii",
     "lockBaseModFiles": false
   },

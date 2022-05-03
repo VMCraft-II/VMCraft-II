@@ -6,13 +6,14 @@ There is a large demand for cybersecurity workers in today’s economy and world
 After having improved upon our predecessors who created VMCraft (1), we have created enterprise-virtualization mod that allows users of the mod to create, in minecraft, a computer or laptop (same functionality) block. Once placed, using a configuration key, the user can configure the laptop to connect to an internal or external enterprise server (tested with Proxmox) which hosts virtual machine(s). After configured, the user can then right click on the block and a browser will open. The browser contains a remote desktop GUI for the virtual machine to which you are connecting to. 
 
 ## User Installation 
-1. Download a jar file somewhere (Not there yet)
-2. Place jar file in a specific location (somewhere we'll help)
-3. Play Minecraft
-4. Build/create laptop or computer. Find config key (in creative mode block menu).
+1. Download a jar file (Latest release)
+2. Download Minecraft Forge (This is for using mods in minecraft)
+3. Place jar file in Minecraft Forge mods folder
+4. Play Minecraft
+5. Build/create laptop or computer. Find config key (in creative mode block menu).
 <br /> <img src="screenshots/Recipe.png" width="30%"><img/>
 <img src="screenshots/key.PNG" width="30%"><img/>
-5. Place block, use key on block to configure
+6. Place block, use key on block to configure
 <br /> <img src="screenshots/Computers.png" width="45%"><img/>
 7. Enter connection info of server (Example Below)
 <br /> <img src="screenshots/Capture.PNG" width="45%"><img/> 
@@ -20,7 +21,7 @@ After having improved upon our predecessors who created VMCraft (1), we have cre
 <img src="screenshots/Capture3.PNG" width="45%"><img/>
 <img src="screenshots/Capture4.PNG" width="45%"><img/> <br />
 
-7. Right click on Block (no key in hand)
+8. Right click on Block (no key in hand)
 
 Should see designated virtual machine remote desktop at this point in browser
 Currently, non-persistent between sessions/if block is broken (Config information will be lost)

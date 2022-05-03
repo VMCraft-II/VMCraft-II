@@ -6,7 +6,7 @@ There is a large demand for cybersecurity workers in today’s economy and world
 After having improved upon our predecessors who created VMCraft (1), we have created enterprise-virtualization mod that allows users of the mod to create, in minecraft, a computer or laptop (same functionality) block. Once placed, using a configuration key, the user can configure the laptop to connect to an internal or external enterprise server (tested with Proxmox) which hosts virtual machine(s). After configured, the user can then right click on the block and a browser will open. The browser contains a remote desktop GUI for the virtual machine to which you are connecting to. 
 
 ## User Installation 
-1. Download a jar file (Latest release)
+1. Download the jar file (Latest release)
 2. Download Minecraft Forge (This is for using mods in minecraft)
 3. Place jar file in Minecraft Forge mods folder
 4. Play Minecraft
